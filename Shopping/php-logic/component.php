@@ -1,6 +1,6 @@
 <?php
 
-function component($productname, $productprice) {
+function component($productname, $productprice, $productid){
     $element = "
     <div class=\"content\">
          <form action=\"index.php\" method=\"post\">
@@ -12,13 +12,13 @@ function component($productname, $productprice) {
 
                 <span class=\"price\">$$productprice</span>
 
-                <button type=\"submit\" name=\"details\">Details</button>
-                <button type=\"submit\" name=\"add\">Add to Cart</button>
+                <button type=\"submit\" name=\"details\" class=\"card-button\">Details</button>
+                <button type=\"submit\" name=\"add\" class=\"card-button\">Add to Cart</button>
+                <input type='hidden' name='product_id' value='$productid'>
             </div>
         </form>
     </div>
     ";
     echo $element;
 }
-
 
