@@ -5,7 +5,7 @@ function component($productname, $productprice, $productid){
     <div class=\"content\">
          <form action=\"index.php\" method=\"post\">
             <div>
-                <img src=\"./upload/Product.png\" alt=\"Image1\">
+                <img src=\"./upload/Product.png\" alt=\"Image1\" class=\"card-img\">
             </div>
             <div class=\"card-body\">
                 <h3 class=\"card-title\">$productname</h5>
@@ -21,4 +21,25 @@ function component($productname, $productprice, $productid){
     ";
     echo $element;
 }
+
+function cartElement($productname, $productprice, $productid){
+    $element = "
+    <div class=\"cart\">
+        <div class=\"products\">
+            <form action=\"cart.php?action=remove&id=$productid\" method=\"post\" class=\"cart-items\">
+                <img src=\"./upload/Product.png\" alt=\"Laptop\" class=\"product-image\">
+                <div class=\"product-info\">
+                    <h5 class=\"product-name\">$productname</h5>
+                    <h5 class=\"product-price\">$$productprice</h5>
+                    <button type=\"submit\" name=\"remove\" class=\"product-remove\">Remove</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    ";
+    echo $element;
+}
+
+
+
 
