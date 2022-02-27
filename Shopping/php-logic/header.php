@@ -4,8 +4,8 @@
     </div>
     <nav class="">
         <ul class="nav-links">
-            <li><button class="nav-button"><a href="index.php">All Products</a></button></li>
-            <li><button class="nav-button"><a href="cart.php"><h5>Cart 
+            <li><a href="index.php"><button class="nav-button">All Products</button></a></li>
+            <li><a href="cart.php"><button class="nav-button"><h5>Cart
 
             <?php
                 if (isset($_SESSION['cart'])){
@@ -16,10 +16,8 @@
                 }
             ?>
 
-            </h5></a></button></li>
+            </h5></button></a></li>
         </ul>
     </nav>
 
-    <!-- <a href="index.php" class="nav-button"><button >All Products</button></a>
-    <a href="cart.php" class="nav-button"><button>Cart</button></a> -->
 </header>

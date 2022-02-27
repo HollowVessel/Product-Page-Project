@@ -38,7 +38,7 @@ if (isset($_POST['remove'])){
         <hr>
 
             <?php
-
+            
                 $total = 0;
                 if (isset($_SESSION['cart'])) {
                     $product_id = array_column($_SESSION['cart'], 'product_id');
@@ -58,23 +58,31 @@ if (isset($_POST['remove'])){
 
             ?>
 
-            <div class="cart-total">
-                <h6>Total Amount</h6>
-                <p>$<?php echo $total?></p>
-
-                <h6>Number of items</h6>
-                <p> 
-                    <?php 
-
-                    if (isset($_SESSION['cart'])){  
-                        $count = count($_SESSION['cart']);
-                        echo "<h6> ($count items)</h6>";
-                    }else {
-                        echo "<h6> (0 items)</h6>";
-                    }
-                    ?>
-                </p>
-            </div>
     </div>  
+    <div class="cart-total">
+        <div>
+            <h6>Total Amount</h6>
+            <span>$<?php echo $total?></span>
+        </div>
+        
+        <div>
+            <h6>Number of items</h6>
+            <span> 
+                <?php 
+
+                if (isset($_SESSION['cart'])){  
+                    $count = count($_SESSION['cart']);
+                    echo "<h6> ($count items)</h6>";
+                }else {
+                    echo "<h6> (0 items)</h6>";
+                }
+                ?>
+            </span>
+        </div>
+
+        <a href="cart.php">Proceed to Checkout</a>
+        
+    </div>
 </body>
 </html>
+
